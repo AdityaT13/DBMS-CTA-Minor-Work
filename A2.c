@@ -1,40 +1,40 @@
 #include <stdio.h>
 
-void display_arr(int arr[], int size);
+void displayArr(int arr[], int size);
 int calculate_sum(int arr[], int size);
 void update_element(int arr[], int index, int new_val, int n);
 void pointer_accessing(int arr[], int index, int n);
 
 int main() {
-    int arr[25], i, n, idx, nv, pa;
+    int arr[25], i, n, idx, nv, pa,sum;
 
     printf("Enter n elements in array: \n");
     scanf("%d", &n);
 
-    printf("Enter Initial Array Elements: \n");
+    printf("Enter %d Array Elements: \n",n);
     for (i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
+    displayArr(arr, n);
 
-    display_arr(arr, n);
-
-    int sum = calculate_sum(arr, n);
+    sum = calculate_sum(arr, n);
     printf("\nSum of Array Elements: %d\n", sum);
 
-    printf("Enter particular index to be updated: ");
+    printf("Enter particular index to be updated: \n");
     scanf("%d", &idx);
 
-    printf("Enter the new value to be updated: ");
+    printf("Enter the new value to be updated: \n");
     scanf("%d", &nv);
 
     update_element(arr, idx, nv, n);
 
     printf("\nArray After Updating Element at Index %d:\n", nv);
-    display_arr(arr, n);
+    displayArr(arr, n);
 
-    printf("Enter the index at which it needs to be accessed: \n");
+    printf("Enter the index at which the number is to be accessed: \n");
     scanf("%d", &pa);
-    printf("Pointer Access at Index %d:\n", pa);
+    
+    printf("Pointer Access @ index %d:\n", pa);
     pointer_accessing(arr, pa, n);
 
     return 0;
@@ -50,7 +50,7 @@ void update_element(int arr[], int index, int new_val, int n) {    // Function t
     if (index >= 0 && index < n) {
         arr[index] = new_val;
     } else {
-        printf("Invalid index\n");
+        printf("Invalid index updation \n");
     }
 }
 
